@@ -12,6 +12,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		1F77FDA4F20F4125943D33B9 /* SF Pro Display Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3255AD31DC194FB4B1839150 /* SF Pro Display Bold.ttf */; };
+		D967EF3DCCE1458E84B154EF /* SF Pro Display Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC56A36D73A642E8B0B4334D /* SF Pro Display Regular.ttf */; };
+		05B4539C10D84B9496E14E5A /* SF Pro Display Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B4CEB4E1331468EBCE3D609 /* SF Pro Display Semibold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FotonTechApp/main.m; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FotonTechApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		3255AD31DC194FB4B1839150 /* SF Pro Display Bold.ttf */ = {isa = PBXFileReference; name = "SF Pro Display Bold.ttf"; path = "../src/assets/fonts/SF Pro Display Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FC56A36D73A642E8B0B4334D /* SF Pro Display Regular.ttf */ = {isa = PBXFileReference; name = "SF Pro Display Regular.ttf"; path = "../src/assets/fonts/SF Pro Display Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6B4CEB4E1331468EBCE3D609 /* SF Pro Display Semibold.ttf */ = {isa = PBXFileReference; name = "SF Pro Display Semibold.ttf"; path = "../src/assets/fonts/SF Pro Display Semibold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 				00E356EF1AD99517003FC87E /* FotonTechAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				EAC0787D44304E498F8DF872 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -123,6 +130,17 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		EAC0787D44304E498F8DF872 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				3255AD31DC194FB4B1839150 /* SF Pro Display Bold.ttf */,
+				FC56A36D73A642E8B0B4334D /* SF Pro Display Regular.ttf */,
+				6B4CEB4E1331468EBCE3D609 /* SF Pro Display Semibold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -214,6 +232,9 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				1F77FDA4F20F4125943D33B9 /* SF Pro Display Bold.ttf in Resources */,
+				D967EF3DCCE1458E84B154EF /* SF Pro Display Regular.ttf in Resources */,
+				05B4539C10D84B9496E14E5A /* SF Pro Display Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
