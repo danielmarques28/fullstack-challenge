@@ -1,10 +1,14 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import { Container } from 'src/components';
+import * as S from './Home.styles';
 
 export const Home = () => {
   return (
-    <View>
-      <Text>Home</Text>
-    </View>
+    <Container>
+      <S.HomeView>
+        <Text>Home</Text>
+      </S.HomeView>
+    </Container>
   );
 };
