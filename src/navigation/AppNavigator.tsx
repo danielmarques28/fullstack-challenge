@@ -1,13 +1,19 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import { Home } from 'src/pages';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { HomeStack, AddBookStack } from './stacks';
 
-const Stack = createStackNavigator();
+export type TabNavigatorParamList = {
+  HomeStack: undefined;
+  AddBookStack: undefined;
+};
+
+const Tab = createBottomTabNavigator<TabNavigatorParamList>();
 
 export const AppNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={Home} />
-    </Stack.Navigator>
+    <Tab.Navigator initialRouteName="HomeStack">
+      <Tab.Screen name="HomeStack" component={HomeStack} />
+      <Tab.Screen name="AddBookStack" component={AddBookStack} />
+    </Tab.Navigator>
   );
 };
