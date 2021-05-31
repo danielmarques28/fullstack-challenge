@@ -5,3 +5,4 @@ export * from './Box/Box';
 export * from './BottomBar/BottomBar';
 export * from './Button/Button';
 export * from './Icon/Icon';
+export * from './BookItem/BookItem';
