@@ -1,6 +1,5 @@
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
 import { Icon, Text } from 'src/components';
 import theme from 'src/theme';
 import { Box } from '../Box/Box';

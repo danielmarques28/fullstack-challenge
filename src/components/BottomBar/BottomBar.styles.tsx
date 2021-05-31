@@ -6,7 +6,7 @@ export const BottomBarView = styled.View`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: ${theme.spacings.xxmedium};
+    height: ${theme.spacings.xxxmedium};
   `}
 `;
 
