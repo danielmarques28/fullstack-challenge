@@ -14,6 +14,7 @@ const theme = {
     medium: '30px',
     xmedium: '40px',
     xxmedium: '48px',
+    xxxmedium: '60px',
   },
   layers: {},
   font: {
@@ -28,7 +29,8 @@ const theme = {
       bold: 700,
     },
     sizes: {
-      small: '10px',
+      xsmall: '10px',
+      small: '12px',
       normal: '16px',
       large: '24px',
     },
@@ -37,6 +39,7 @@ const theme = {
       secondary: '#FF6978',
       white: 'white',
       gray: 'gray',
+      lightBack: '#313131',
     },
   },
 } as const;
