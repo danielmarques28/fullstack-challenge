@@ -27,5 +27,6 @@ module.exports = {
     quotes: ['error', 'single', { avoidEscape: true }],
     'prettier/prettier': 'error',
     'object-curly-spacing': ['error', 'always'],
+    'no-console': 'warn',
   },
 };
