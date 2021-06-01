@@ -7,6 +7,7 @@ export const BottomBarView = styled.View`
     align-items: center;
     width: 100%;
     height: ${theme.spacings.xxxmedium};
+    background: ${theme.colors.white};
   `}
 `;
 
