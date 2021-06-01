@@ -22,11 +22,11 @@ export const BottomBar = ({
 
         const handleLabel = (routeName: string) => {
           switch (routeName) {
-            case 'HomeStack':
+            case 'Home':
               return { label: 'Home', icon: 'home' };
-            case 'AddBookStack':
+            case 'AddBook':
               return { label: 'Add Book', icon: 'plus' };
-            case 'ProfileStack':
+            case 'Profile':
               return { label: 'Profile', icon: 'user' };
             default:
               return { label: 'Home', icon: 'home' };

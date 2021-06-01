@@ -1,22 +1,25 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import { Home, Details } from 'src/pages';
+import { AddBook, Home } from 'src/pages';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { BottomBar } from 'src/components';
+import { TabNavigatorParamList } from '../AppNavigator';
 
 export type HomeStackParamList = {
   Home: undefined;
-  Details: { id: number };
-};
+  AddBook: undefined;
+} & Pick<TabNavigatorParamList, 'BookDetails'>;
 
-const Stack = createStackNavigator<HomeStackParamList>();
+const Tab = createBottomTabNavigator<HomeStackParamList>();
 
 export const HomeStack = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{ headerShown: false }}
+    <Tab.Navigator
       initialRouteName="Home"
+      tabBarOptions={{ keyboardHidesTabBar: true }}
+      tabBar={(props) => <BottomBar {...props} />}
     >
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Details" component={Details} />
-    </Stack.Navigator>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="AddBook" component={AddBook} />
+    </Tab.Navigator>
   );
 };

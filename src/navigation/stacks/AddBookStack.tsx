@@ -1,20 +1,22 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
 import { AddBook } from 'src/pages';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { BottomBar } from 'src/components';
 
 export type AddBookStackParamList = {
   AddBook: undefined;
 };
 
-const Stack = createStackNavigator<AddBookStackParamList>();
+const Tab = createBottomTabNavigator<AddBookStackParamList>();
 
 export const AddBookStack = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{ headerShown: false }}
+    <Tab.Navigator
       initialRouteName="AddBook"
+      tabBarOptions={{ keyboardHidesTabBar: true }}
+      tabBar={(props) => <BottomBar {...props} />}
     >
-      <Stack.Screen name="AddBook" component={AddBook} />
-    </Stack.Navigator>
+      <Tab.Screen name="AddBook" component={AddBook} />
+    </Tab.Navigator>
   );
 };
