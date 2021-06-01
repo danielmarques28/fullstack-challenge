@@ -6,3 +6,4 @@ export * from './BottomBar/BottomBar';
 export * from './Button/Button';
 export * from './Icon/Icon';
 export * from './BookItem/BookItem';
+export * from './FloatingBar/FloatingBar';

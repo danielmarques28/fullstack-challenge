@@ -4,7 +4,7 @@ export const FloatingBarView = styled.View`
   ${({ theme }) => `
     position: absolute;
     padding: ${theme.spacings.small} ${theme.spacings.xxxsmall};
-    bottom: ${theme.spacings.small};
+    bottom: ${theme.spacings.xxmedium};
     justify-content: space-between;
     align-self: center;
     flex-direction: row;
