@@ -31,7 +31,7 @@ export const AddBook = () => {
           label="Description"
           onChangeText={onChangeText}
           multiline
-          numberOfLines={6}
+          numberOfLines={8}
         />
 
         <Box height={theme.spacings.medium} />
