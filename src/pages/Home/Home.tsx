@@ -34,7 +34,9 @@ export const Home = () => {
           renderItem={({ item }) => (
             <S.ItemView>
               <TouchableOpacity
-                onPress={() => navigation.navigate('Details', { id: item.id })}
+                onPress={() =>
+                  navigation.navigate('BookDetails', { id: item.id })
+                }
               >
                 <BookItem
                   image={require('src/assets/images/png/book.png')}
