@@ -29,3 +29,7 @@ export const createBook = async (body: CreateBook) => {
 export const listBooks = async (page: number = 1) => {
   return axios.get<ListBooks>(`${url}?page=${page}`);
 };
+
+export const getBook = async (id: number) => {
+  return axios.get<GetBook>(`${url}/${id}`);
+};
