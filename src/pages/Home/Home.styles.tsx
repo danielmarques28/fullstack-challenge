@@ -13,3 +13,11 @@ export const ItemView = styled.View`
     padding-bottom: ${theme.spacings.small};
   `}
 `;
+
+export const LoadingView = styled.View`
+  ${({ theme }) => `
+    padding-top: ${theme.spacings.small};
+    padding-bottom: ${theme.spacings.xxxmedium};
+    align-items: center;
+  `}
+`;
