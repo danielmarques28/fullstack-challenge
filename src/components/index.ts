@@ -7,3 +7,4 @@ export * from './Button/Button';
 export * from './Icon/Icon';
 export * from './BookItem/BookItem';
 export * from './FloatingBar/FloatingBar';
+export * from './LoadingOverlay/LoadingOverlay';
