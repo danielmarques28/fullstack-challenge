@@ -29,8 +29,6 @@ export const Home = () => {
   }, []);
 
   const handleListBooks = useCallback(async () => {
-    console.log('handleListBooks');
-
     try {
       setRefreshing(true);
 
@@ -52,7 +50,6 @@ export const Home = () => {
       setPage(newPage);
 
       const { data } = await listBooks(newPage);
-      console.log(data.rows);
 
       setBooks([...books, ...data.rows]);
       setCount(data.count);
