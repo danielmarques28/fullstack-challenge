@@ -1,33 +1,46 @@
-import React, { useEffect } from 'react';
-import { ImageSourcePropType } from 'react-native';
+import React from 'react';
+import { ImageSourcePropType, TouchableOpacity } from 'react-native';
 import { Text, Box } from 'src/components';
+import { HomeNavigationProp } from 'src/pages';
 import { useTheme } from 'styled-components';
 import * as S from './BookItem.styles';
 
 export type BookItemProps = {
+  id: number;
   image: ImageSourcePropType;
-  title: string;
+  name: string;
   author: string;
+  navigation: HomeNavigationProp;
 };
 
-export const BookItem = ({ image, title, author }: BookItemProps) => {
+export const BookItem = ({
+  id,
+  image,
+  name,
+  author,
+  navigation,
+}: BookItemProps) => {
   const theme = useTheme();
 
   return (
     <S.BookItemView>
-      <S.Image source={image} />
+      <TouchableOpacity
+        onPress={() => navigation.navigate('BookDetails', { id })}
+      >
+        <S.Image source={image} />
 
-      <Box height={theme.spacings.xxsmall} />
+        <Box height={theme.spacings.xxsmall} />
 
-      <Text weight="bold" size="small" color="lightBack">
-        {title}
-      </Text>
+        <Text weight="bold" size="small" color="lightBack">
+          {name}
+        </Text>
 
-      <Box height={theme.spacings.xxxsmall} />
+        <Box height={theme.spacings.xxxsmall} />
 
-      <Text weight="bold" size="xsmall" color="lightBack">
-        by {author}
-      </Text>
+        <Text weight="bold" size="xsmall" color="lightBack">
+          by {author}
+        </Text>
+      </TouchableOpacity>
     </S.BookItemView>
   );
 };
