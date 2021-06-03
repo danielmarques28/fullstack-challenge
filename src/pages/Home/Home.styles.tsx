@@ -2,7 +2,9 @@ import styled from 'styled-components/native';
 
 export const HomeView = styled.View`
   ${({ theme }) => `
+    height: 100%;
     padding: ${theme.spacings.small};
+    padding-bottom: 0;
   `}
 `;
 
@@ -24,7 +26,7 @@ export const ItemView = styled.View`
 export const LoadingView = styled.View`
   ${({ theme }) => `
     padding-top: ${theme.spacings.small};
-    padding-bottom: ${theme.spacings.xxxmedium};
+    padding-bottom: ${theme.spacings.small};
     align-items: center;
   `}
 `;
