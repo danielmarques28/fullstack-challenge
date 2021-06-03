@@ -33,5 +33,6 @@ export const TextInput = styled.TextInput<{
     margin-top: ${label ? theme.spacings.xxsmall : 0};
     background-color: ${theme.colors.white};
     border-radius: ${theme.spacings.xxsmall};
+    color: ${theme.font.colors.primary};
   `}
 `;

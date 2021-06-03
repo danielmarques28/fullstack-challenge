@@ -42,6 +42,7 @@ export const TextInput = ({
           placeholder={placeholder}
           placeholderTextColor={theme.font.colors.gray}
           icon={icon}
+          label={label}
         />
       </S.Input>
     </S.TextInputView>

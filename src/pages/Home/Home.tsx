@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList } from 'react-native';
-import { BookItem, Box, Container, Text } from 'src/components';
+import { BookItem, Box, Container, Text, TextInput } from 'src/components';
 import { useTheme } from 'styled-components';
 import * as S from './Home.styles';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -8,6 +8,7 @@ import { HomeStackParamList } from 'src/navigation/stacks';
 import { useNavigation } from '@react-navigation/native';
 import { ListBooks, listBooks } from 'src/api/book';
 import { isFloat, isInt } from 'src/utils/calcule';
+import useKeyboard from 'src/hooks/useKeyboard';
 
 export type HomeNavigationProp = StackNavigationProp<
   HomeStackParamList,
@@ -17,6 +18,7 @@ export type HomeNavigationProp = StackNavigationProp<
 export const Home = () => {
   const theme = useTheme();
   const navigation = useNavigation<HomeNavigationProp>();
+  const { keyboardIsOpen } = useKeyboard();
 
   const [books, setBooks] = useState<ListBooks['rows']>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -25,14 +27,14 @@ export const Home = () => {
   const [count, setCount] = useState<number>(0);
 
   useEffect(() => {
-    handleListBooks();
+    handleListBooks(null);
   }, []);
 
-  const handleListBooks = useCallback(async () => {
+  const handleListBooks = useCallback(async (search: string | null) => {
     try {
       setRefreshing(true);
 
-      const { data } = await listBooks();
+      const { data } = await listBooks(1, search);
 
       setBooks(data.rows);
       setCount(data.count);
@@ -61,14 +63,31 @@ export const Home = () => {
     }
   };
 
+  const onChangeSearch = async (text: string) => {
+    setPage(1);
+    handleListBooks(text);
+  };
+
   return (
     <Container scrollView={false}>
       <S.HomeView>
-        <Text color="primary" variant="title">
-          Hi, <Text variant="title">Mehmed Al Fatih</Text>
-        </Text>
+        <S.SearchView>
+          <TextInput
+            icon="search"
+            placeholder="Search book"
+            onChangeText={onChangeSearch}
+          />
+        </S.SearchView>
 
-        <Box height={theme.spacings.medium} />
+        {!keyboardIsOpen && (
+          <Box>
+            <Text color="primary" variant="title">
+              Hi, <Text variant="title">Mehmed Al Fatih</Text> 👋
+            </Text>
+
+            <Box height={theme.spacings.medium} />
+          </Box>
+        )}
 
         <FlatList
           data={books}
@@ -88,7 +107,7 @@ export const Home = () => {
           refreshing={refreshing}
           onRefresh={() => {
             setPage(1);
-            handleListBooks();
+            handleListBooks(null);
           }}
           onEndReached={() => {
             const limit = 10;

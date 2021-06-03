@@ -6,6 +6,13 @@ export const HomeView = styled.View`
   `}
 `;
 
+export const SearchView = styled.View`
+  ${({ theme }) => `
+    padding-top: ${theme.spacings.small};
+    padding-bottom: ${theme.spacings.medium};
+  `}
+`;
+
 export const ItemView = styled.View`
   ${({ theme }) => `
     flex: 1;
