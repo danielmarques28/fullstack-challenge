@@ -15,12 +15,14 @@ export type HomeNavigationProp = StackNavigationProp<
   'Home'
 >;
 
+const LIMIT_PER_PAGE = 9;
+
 export const Home = () => {
   const theme = useTheme();
   const navigation = useNavigation<HomeNavigationProp>();
   const { keyboardIsOpen } = useKeyboard();
 
-  const [books, setBooks] = useState<ListBooks['rows']>([]);
+  const [books, setBooks] = useState<ListBooks[0]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [refreshing, setRefreshing] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1);
@@ -34,10 +36,10 @@ export const Home = () => {
     try {
       setRefreshing(true);
 
-      const { data } = await listBooks(1, search);
+      const { data } = await listBooks(1, LIMIT_PER_PAGE, search);
 
-      setBooks(data.rows);
-      setCount(data.count);
+      setBooks(data[0]);
+      setCount(data[1]);
 
       setRefreshing(false);
     } catch (error) {
@@ -51,10 +53,10 @@ export const Home = () => {
       setIsLoading(true);
       setPage(newPage);
 
-      const { data } = await listBooks(newPage);
+      const { data } = await listBooks(newPage, LIMIT_PER_PAGE);
 
-      setBooks([...books, ...data.rows]);
-      setCount(data.count);
+      setBooks([...books, ...data[0]]);
+      setCount(data[1]);
 
       setRefreshing(false);
     } catch (error) {
@@ -110,8 +112,7 @@ export const Home = () => {
             handleListBooks(null);
           }}
           onEndReached={() => {
-            const limit = 10;
-            const total = count / limit;
+            const total = count / LIMIT_PER_PAGE;
 
             if (
               (isInt(total) && page >= total) ||
