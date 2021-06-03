@@ -5,15 +5,16 @@ import theme from 'src/theme';
 import { Box } from '../Box/Box';
 import { IconProps } from '../Icon/Icon';
 import * as S from './BottomBar.styles';
+import useKeyboard from 'src/hooks/useKeyboard';
 
 export const BottomBar = ({
   state,
   descriptors,
   navigation,
 }: BottomTabBarProps) => {
-  const focusedOptions = descriptors[state.routes[state.index].key].options;
+  const { keyboardIsOpen } = useKeyboard();
 
-  if (focusedOptions.tabBarVisible === false) return null;
+  if (keyboardIsOpen) return null;
 
   return (
     <S.BottomBarView>
