@@ -6,3 +6,10 @@ export const AddBookView = styled.View`
     padding-top: ${theme.spacings.xxmedium};
   `}
 `;
+
+export const PickerView = styled.View`
+  ${({ theme }) => `
+    background-color: ${theme.colors.white};
+    border-radius: ${theme.spacings.xxsmall};
+  `}
+`;
