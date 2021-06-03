@@ -1,3 +1,4 @@
+import { GetAuthor } from './author';
 import axios from './axios';
 
 export type CreateBook = {
@@ -7,11 +8,6 @@ export type CreateBook = {
 };
 
 export type ListBooks = [GetBook[], number];
-
-export type GetAuthor = {
-  id: number;
-  name: string;
-};
 
 export type GetBook = {
   id: number;
