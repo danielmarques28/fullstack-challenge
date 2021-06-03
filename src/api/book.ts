@@ -26,8 +26,13 @@ export const createBook = async (body: CreateBook) => {
   return axios.post<GetBook>(url, body);
 };
 
-export const listBooks = async (page: number = 1) => {
-  return axios.get<ListBooks>(`${url}?page=${page}`);
+export const listBooks = async (
+  page: number = 1,
+  search: string | null = null,
+) => {
+  return axios.get<ListBooks>(
+    `${url}?page=${page}` + (search ? `&search=${search}` : ''),
+  );
 };
 
 export const getBook = async (id: number) => {
