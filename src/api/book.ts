@@ -6,18 +6,18 @@ export type CreateBook = {
   description: string;
 };
 
-export type ListBooks = {
-  count: number;
-  rows: GetBook[];
+export type ListBooks = [GetBook[], number];
+
+export type GetAuthor = {
+  id: number;
+  name: string;
 };
 
 export type GetBook = {
   id: number;
   name: string;
-  author: string;
+  author: GetAuthor;
   description: string;
-  updatedAt?: string;
-  createdAt?: string;
 };
 
 const url = '/books';
@@ -28,10 +28,11 @@ export const createBook = async (body: CreateBook) => {
 
 export const listBooks = async (
   page: number = 1,
+  limit: number = 9,
   search: string | null = null,
 ) => {
   return axios.get<ListBooks>(
-    `${url}?page=${page}` + (search ? `&search=${search}` : ''),
+    `${url}?page=${page}&limit=${limit}` + (search ? `&search=${search}` : ''),
   );
 };
 
