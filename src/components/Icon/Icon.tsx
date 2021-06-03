@@ -8,6 +8,7 @@ import ArrowLeftSvg from 'src/assets/images/svg/arrow-left.svg';
 import HeadphonesSvg from 'src/assets/images/svg/headphones.svg';
 import BookOpenSvg from 'src/assets/images/svg/book-open.svg';
 import ShareSvg from 'src/assets/images/svg/share.svg';
+import SearchSvg from 'src/assets/images/svg/search.svg';
 
 export type IconProps = {
   name:
@@ -17,7 +18,8 @@ export type IconProps = {
     | 'arrow-left'
     | 'headphones'
     | 'book-open'
-    | 'share';
+    | 'share'
+    | 'search';
   color?: keyof DefaultTheme['colors'];
   size?: keyof DefaultTheme['spacings'];
 };
@@ -46,6 +48,8 @@ export const Icon = ({ name, color = 'black', size = 'small' }: IconProps) => {
         return BookOpenSvg;
       case 'share':
         return ShareSvg;
+      case 'search':
+        return SearchSvg;
       default:
         return null;
     }
