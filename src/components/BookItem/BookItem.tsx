@@ -1,5 +1,6 @@
 import React from 'react';
 import { ImageSourcePropType, TouchableOpacity } from 'react-native';
+import { GetAuthor } from 'src/api/book';
 import { Text, Box } from 'src/components';
 import { HomeNavigationProp } from 'src/pages';
 import { useTheme } from 'styled-components';
@@ -9,7 +10,7 @@ export type BookItemProps = {
   id: number;
   image: ImageSourcePropType;
   name: string;
-  author: string;
+  author: GetAuthor;
   navigation: HomeNavigationProp;
 };
 
@@ -38,7 +39,7 @@ export const BookItem = ({
         <Box height={theme.spacings.xxxsmall} />
 
         <Text weight="bold" size="xsmall" color="lightBack">
-          by {author}
+          by {author.name}
         </Text>
       </TouchableOpacity>
     </S.BookItemView>

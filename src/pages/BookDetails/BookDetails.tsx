@@ -66,7 +66,7 @@ export const BookDetails = () => {
         <Box height={theme.spacings.xxxsmall} />
 
         <Text color="secondary" variant="normal">
-          {book.author}
+          {book.author.name}
         </Text>
 
         <Box height={theme.spacings.xxsmall} />
