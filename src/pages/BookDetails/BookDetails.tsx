@@ -48,7 +48,9 @@ export const BookDetails = () => {
 
   return (
     <Container>
-      <S.ImageBg />
+      <S.ImageBg
+        source={require('src/assets/images/png/background-image.png')}
+      />
 
       <S.DetailsView>
         <TouchableOpacity onPress={() => navigation.goBack()}>
