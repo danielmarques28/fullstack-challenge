@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const ImageBg = styled.View`
+export const ImageBg = styled.ImageBackground`
   position: absolute;
   width: 100%;
   height: 38%;
@@ -12,7 +12,7 @@ export const DetailsView = styled.View`
   ${({ theme }) => `
     height: 100%;
     padding: ${theme.spacings.small};
-    padding-top: ${theme.spacings.xxmedium};
+    padding-top: ${theme.spacings.medium};
   `}
 `;
 
